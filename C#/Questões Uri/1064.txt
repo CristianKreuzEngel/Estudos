@@ -1,0 +1,46 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            double a, b, c, d, e, f, media;
+            int cont = 0;
+            a = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            b = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            c = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            d = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            e = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            f = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            media = 0.0;
+            if (a > 0.0){
+                cont += 1;
+                media += a;
+            }
+            if (b > 0.0){
+                cont += 1;
+                media += b;
+            }
+            if (c > 0.0){
+                cont += 1;
+                media += c;
+            }
+            if (d > 0.0){
+                cont += 1;
+                media += d;
+            }
+            if (e > 0.0){
+                cont += 1;
+                media += e;
+            }
+            if (f > 0.0){
+                cont += 1;
+                media += f;
+            }
+            media = media/cont;
+            Console.WriteLine(cont + " valores positivos");
+            Console.WriteLine(media.ToString("F1", CultureInfo.InvariantCulture));
+        }
+    }
+}
