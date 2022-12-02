@@ -1,0 +1,35 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            double x, nota; 
+            int cont, control;
+            x = 0.0;
+            cont = 0;
+            control = 1;
+            while(control != 2){
+                while (cont != 2){
+                    nota = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    if (nota >= 0.0 && nota <= 10.0){
+                        x += nota;
+                        cont += 1;
+                    }else{
+                        Console.WriteLine("nota invalida");
+                    }
+                }
+                x = x / 2.0;
+                Console.WriteLine("media = " + x.ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine("novo calculo (1-sim 2-nao)");
+                control = int.Parse(Console.ReadLine());
+                while (control != 1 && control != 2){
+                    Console.WriteLine("novo calculo (1-sim 2-nao)");
+                    control = int.Parse(Console.ReadLine());
+                }
+                x = 0.0;
+                cont = 0;
+            }
+        } 
+    }
+}
