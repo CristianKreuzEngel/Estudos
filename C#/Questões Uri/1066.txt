@@ -1,0 +1,88 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            double a, b, c, d, e; 
+            int positivo, negativo, par, impar;
+            positivo = 0;
+            negativo = 0;
+            par = 0;
+            impar = 0;
+            a = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            b = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            c = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            d = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            e = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            if (a % 2 == 0.0){
+                par += 1;
+            }
+            if (b % 2 == 0.0){
+                par += 1;
+            }
+            if (c % 2 == 0.0){
+                par += 1;
+            }
+            if (d % 2 == 0.0){
+                par += 1;
+            }
+            if (e % 2 == 0.0){
+                par += 1;
+            }
+
+            if (a % 2 != 0.0){
+                impar += 1;
+            }
+            if (b % 2 != 0.0){
+                impar += 1;
+            }
+            if (c % 2 != 0.0){
+                impar += 1;
+            }
+            if (d % 2 != 0.0){
+                impar += 1;
+            }
+            if (e % 2 != 0.0){
+                impar += 1;
+            }
+
+            if (a > 0.0){
+                positivo += 1;
+            }
+            if (b > 0.0){
+                positivo += 1;
+            }
+            if (c > 0.0){
+                positivo += 1;
+            }
+            if (d > 0.0){
+                positivo += 1;
+            }
+            if (e > 0.0){
+                positivo += 1;
+            }         
+
+            if (a < 0.0){
+                negativo += 1;
+            }
+            if (b < 0.0){
+                negativo += 1;
+            }
+            if (c < 0.0){
+                negativo += 1;
+            }
+            if (d < 0.0){
+                negativo += 1;
+            }
+            if (e < 0.0){
+                negativo += 1;
+            }
+            Console.WriteLine(par + " valor(es) par(es)");
+            Console.WriteLine(impar + " valor(es) impar(es)");
+            Console.WriteLine(positivo + " valor(es) positivo(s)");
+            Console.WriteLine(negativo + " valor(es) negativo(s)");
+        }
+    }
+}
