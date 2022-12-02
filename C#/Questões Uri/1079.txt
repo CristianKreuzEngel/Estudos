@@ -1,0 +1,19 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            int x = int.Parse(Console.ReadLine());
+            double media, a, b, c;
+            for(int i = 1; i<= x; i++){
+                string[] notas = Console.ReadLine().Split(' ');
+                a = double.Parse(notas[0], CultureInfo.InvariantCulture);
+                b = double.Parse(notas[1], CultureInfo.InvariantCulture);
+                c = double.Parse(notas[2], CultureInfo.InvariantCulture);
+                media = ((a * 2) + (b * 3) + (c * 5)) / 10;
+                Console.WriteLine(media.ToString("F1", CultureInfo.InvariantCulture));
+            }
+        } 
+    }
+}
