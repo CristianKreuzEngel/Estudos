@@ -1,0 +1,21 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            double media, idade;
+            int contador;
+            contador = 0;
+            media = 0;
+            idade = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            while (idade > 0){
+                contador += 1;
+                media += idade;
+                idade = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            }
+            media = media / contador;
+            Console.WriteLine(media.ToString("F2", CultureInfo.InvariantCulture));
+        }
+    }
+}
