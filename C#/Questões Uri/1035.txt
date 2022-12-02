@@ -1,0 +1,20 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            string[] valor = Console.ReadLine().Split(' ');
+            int a, b, c, d;
+            a = int.Parse(valor[0]);
+            b = int.Parse(valor[1]);
+            c = int.Parse(valor[2]);
+            d = int.Parse(valor[3]);
+            if(b > c && d > a && (c + d) > (a + b) && a >= 0 && b >= 0 && c >= 0 && d >= 0 && (a%2) == 0){
+                Console.WriteLine("Valores aceitos");
+            }else{
+                Console.WriteLine("Valores nao aceitos");
+            }
+        }
+    }
+}
