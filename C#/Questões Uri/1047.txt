@@ -1,0 +1,58 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            string[] valor = Console.ReadLine().Split(' ');            
+            int hi, mi, hf, mf, hora, minuto;
+            hi = int.Parse(valor[0]);
+            mi = int.Parse(valor[1]);
+            hf = int.Parse(valor[2]);
+            mf = int.Parse(valor[3]);
+            hora = 0;
+            minuto = 0;
+            if(hi < hf){
+                hora = hf - hi;
+                if (mi < mf){
+                    minuto = mf - mi;
+                }
+                if (mi > mf){
+                    hora = hora - 1;
+                    minuto = (60 - mi) + mf;
+                }
+                if (mi == mf){
+                    minuto = 0;
+                }
+            }
+            if (hi > hf){
+                hora = (24 - hi) + hf;
+                if (mi < mf){
+                    minuto = mf - mi;
+                }
+                if (mi > mf){
+                    hora = hora - 1;
+                    minuto = (60 - mi) + mf;
+                }
+                if (mi == mf){
+                    minuto = 0;
+                }
+            }
+            if (hi == hf){
+                if (mi < mf){
+                    minuto = mf - mi;
+                    hora = 0;
+                }
+                if (mi > mf){
+                    hora = 23;
+                    minuto = (60 - mi) + mf;
+                }
+                if (mi == mf){
+                    minuto = 0;
+                    hora = 24;
+                }                
+            }
+            Console.WriteLine("O JOGO DUROU " + hora + " HORA(S) E " + minuto +" MINUTO(S)");
+        }
+    }
+}
