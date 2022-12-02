@@ -1,0 +1,21 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            int p;
+            p = int.Parse(Console.ReadLine());
+
+            if (p % 2 == 0){
+                p = p +1;
+            }
+            Console.WriteLine(p);
+            Console.WriteLine(p + 2);
+            Console.WriteLine(p + 4);
+            Console.WriteLine(p + 6);
+            Console.WriteLine(p + 8);
+            Console.WriteLine(p + 10);
+        }
+    }
+}
