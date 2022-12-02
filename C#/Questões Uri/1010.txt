@@ -1,0 +1,23 @@
+using System;
+using System.Globalization;
+
+namespace PrimeiroProjeto
+{
+    internal class Program
+    {
+        static void Main(String[] args)
+        {
+            string[] vet1 = Console.ReadLine().Split(' ');
+            string[] vet2 = Console.ReadLine().Split(' ');
+            double a, b, c, d, total;
+            a = double.Parse(vet1[1]);
+            b = double.Parse(vet1[2], CultureInfo.InvariantCulture);
+            c = double.Parse(vet2[1]);
+            d = double.Parse(vet2[2], CultureInfo.InvariantCulture);
+
+            total = (a * b) + (c * d);
+
+            Console.WriteLine("VALOR A PAGAR: R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
+        }
+    }
+}
