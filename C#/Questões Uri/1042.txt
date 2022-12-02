@@ -1,0 +1,36 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            string[] numeros = Console.ReadLine().Split(' ');
+            int a,b,c, aux;
+            a = int.Parse(numeros[0]);
+            b = int.Parse(numeros[1]);
+            c = int.Parse(numeros[2]);
+            if(c > b){
+                aux = c;
+                c = b;
+                b = aux;
+            }
+            if(b > a){
+                aux = b;
+                b = a;
+                a = aux;
+            }
+            if(c > b){
+                aux = c;
+                c = b;
+                b = aux;
+            }
+            Console.WriteLine(c);
+            Console.WriteLine(b);
+            Console.WriteLine(a);
+            Console.WriteLine();
+            Console.WriteLine(numeros[0]);
+            Console.WriteLine(numeros[1]);
+            Console.WriteLine(numeros[2]);      
+        }
+    }
+}
