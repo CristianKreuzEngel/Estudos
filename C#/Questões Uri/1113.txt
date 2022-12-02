@@ -1,0 +1,23 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            string[] valor = Console.ReadLine().Split(' ');
+            int x, y;
+            x = int.Parse(valor[0]);
+            y = int.Parse(valor[1]);
+            while ( x != y){
+                if (x < y){
+                    Console.WriteLine("Crescente");
+                }else{
+                    Console.WriteLine("Decrescente");
+                }
+                valor = Console.ReadLine().Split(' ');
+                x = int.Parse(valor[0]);
+                y = int.Parse(valor[1]);
+            }
+        }
+    }
+}
