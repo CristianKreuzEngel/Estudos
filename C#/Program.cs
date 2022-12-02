@@ -6,7 +6,7 @@ namespace Teste{
         static void Main(String[] args){
             int n = int.Parse(Console.ReadLine());
             int[] vet = new int[n];
-            vet = Console.ReadLine().Split(' ');
+            
         } 
     }
 }
