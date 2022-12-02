@@ -1,0 +1,24 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            double valor, soma;
+            valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            if (valor >= 0.00 && valor <= 2000.00){
+                Console.WriteLine("Isento");
+            }else if (valor >= 2000.01 && valor <= 3000.00){
+                soma = (valor - 2000.00) * 0.08;
+                Console.WriteLine("R$ " + soma.ToString("F2", CultureInfo.InvariantCulture));
+            }else if (valor >= 3000.01 && valor <= 4500.00){
+                soma = ((valor - 3000.00) * 0.18) + (1000.00 * 0.08);
+                Console.WriteLine("R$ " + soma.ToString("F2", CultureInfo.InvariantCulture));                
+            }else if (valor > 4500.00) {
+                soma = ((valor - 4500.00) * 0.28) + (1500.00 * 0.18) + (1000.00 * 0.08);
+                Console.WriteLine("R$ " + soma.ToString("F2", CultureInfo.InvariantCulture));                
+            }
+        }
+    }
+}
