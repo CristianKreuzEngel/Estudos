@@ -1,0 +1,30 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            string[] valor = Console.ReadLine().Split(' ');
+            int a, b;
+            double total;
+            a = int.Parse(valor[0]);
+            b = int.Parse(valor[1]);
+            if (a == 1){
+                total = b * 4.00;
+                Console.WriteLine("Total: R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
+            }else if (a == 2){
+                total = b * 4.50;
+                Console.WriteLine("Total: R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
+            }else if (a == 3){
+                total = b * 5.00;
+                Console.WriteLine("Total: R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
+            }else if (a == 4){
+                total = b * 2.00;
+                Console.WriteLine("Total: R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
+            }else if (a == 5){
+                total = b * 1.50;
+                Console.WriteLine("Total: R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
+            }         
+        }
+    }
+}
