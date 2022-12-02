@@ -1,0 +1,28 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){ 
+            int gasolina, diesel, alcool, numero;
+            gasolina = 0;
+            diesel = 0;
+            alcool = 0;
+            numero = int.Parse(Console.ReadLine());
+            while (numero != 4){
+                if (numero == 1){
+                    alcool += 1;
+                }else if (numero == 2){
+                    gasolina += 1;
+                }else if (numero == 3){
+                    diesel += 1;
+                }
+               numero = int.Parse(Console.ReadLine()); 
+            }
+            Console.WriteLine("MUITO OBRIGADO");
+            Console.WriteLine("Alcool: " + alcool);
+            Console.WriteLine("Gasolina: " + gasolina);
+            Console.WriteLine("Diesel: " + diesel);
+        }
+    }
+}
