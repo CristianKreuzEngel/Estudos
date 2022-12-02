@@ -1,0 +1,39 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            int n = int.Parse(Console.ReadLine());
+            int coelho, sapo, rato, total, qtd;
+            double porCoelho, porSapo, porRato;
+            char tipo;
+            coelho = 0;
+            sapo = 0;
+            rato = 0;
+            for(int i = 1; i<= n; i++){
+                string[] dados = Console.ReadLine().Split(' ');
+                tipo = char.Parse(dados[1]);
+                qtd = int.Parse(dados[0]);
+                if (tipo == 'C'){
+                    coelho += qtd;
+                }else if (tipo == 'S'){
+                    sapo += qtd;
+                }else if (tipo == 'R'){
+                    rato += qtd;
+                }
+            }
+            total = coelho + sapo + rato;
+            Console.WriteLine("Total: " + total + " cobaias");
+            Console.WriteLine("Total de coelhos: " + coelho);
+            Console.WriteLine("Total de ratos: " + rato);
+            Console.WriteLine("Total de sapos: " + sapo);
+            porCoelho = (((double)coelho / total) * 100.00);
+            porRato = (((double)rato / total) * 100.00);
+            porSapo = (((double)sapo / total) * 100.00);
+            Console.WriteLine("Percentual de coelhos: " + porCoelho.ToString("F2", CultureInfo.InvariantCulture) + " %");
+            Console.WriteLine("Percentual de ratos: " + porRato.ToString("F2", CultureInfo.InvariantCulture) + " %");
+            Console.WriteLine("Percentual de sapos: " + porSapo.ToString("F2", CultureInfo.InvariantCulture) + " %");
+        } 
+    }
+}
