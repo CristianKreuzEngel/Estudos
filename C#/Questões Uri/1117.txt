@@ -1,0 +1,24 @@
+using System;
+using System.Globalization;
+
+namespace Teste{
+    internal class Program{
+        static void Main(String[] args){
+            double x, nota; 
+            int cont;
+            x = 0.0;
+            cont = 0;
+            while (cont != 2){
+                nota = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                if (nota >= 0.0 && nota <= 10.0){
+                    x += nota;
+                    cont += 1;
+                }else{
+                    Console.WriteLine("nota invalida");
+                }
+            }
+            x = x / 2.0;
+            Console.WriteLine("media = " + x.ToString("F2", CultureInfo.InvariantCulture));
+        }
+    }
+}
