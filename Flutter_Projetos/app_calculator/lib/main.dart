@@ -7,29 +7,34 @@ void main() {
   ));
 }
 
-class home extends StatelessWidget {
+class home extends StatefulWidget {
   const home({super.key});
 
   @override
+  State<home> createState() => _homeState();
+}
+
+class _homeState extends State<home> {
+  var total = "?";
+  @override
   Widget build(BuildContext context) {
-    var total = "?";
     return Scaffold(
       appBar: AppBar(
-        title: Text("CALCULADORA"),
+        title: const Text("CALCULADORA"),
         backgroundColor: Colors.green,
       ),
       body: Center(
           child: Padding(
-        padding: EdgeInsets.all(50),
+        padding: const EdgeInsets.all(50),
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Text(
-            "Qual o valor da soma abaixo $total",
+            "Qual o valor da soma abaixo",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 25),
+            style: const TextStyle(fontSize: 25),
           ),
           Text(
-            "19 + 1 = ?",
+            "19 + 1 = $total",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 30),
           ),
@@ -38,7 +43,9 @@ class home extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 primary: Colors.green, onPrimary: Colors.white),
             onPressed: () {
-              total = '20';
+              setState(() {
+                total = "20";
+              });
             },
           )
         ]),
