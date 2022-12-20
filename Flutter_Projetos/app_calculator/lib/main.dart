@@ -15,13 +15,13 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-  var total = "?";
+  var total = "QUEM É MINHA NOIVA MARAVILHOSA?";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("CALCULADORA"),
-        backgroundColor: Colors.green,
+        title: const Text("Aplicativo para meu dengo"),
+        backgroundColor: Colors.red,
       ),
       body: Center(
           child: Padding(
@@ -29,22 +29,17 @@ class _homeState extends State<home> {
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Text(
-            "Qual o valor da soma abaixo",
+            "$total",
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 25),
           ),
-          Text(
-            "19 + 1 = $total",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 30),
-          ),
           ElevatedButton(
-            child: Text("Calcular"),
+            child: Text("CLIQUE AQUI PARA SABER"),
             style: ElevatedButton.styleFrom(
-                primary: Colors.green, onPrimary: Colors.white),
+                primary: Colors.red, onPrimary: Colors.white),
             onPressed: () {
               setState(() {
-                total = "20";
+                total = "GABRIELE DE JESUS CARVALHO <3 ";
               });
             },
           )
