@@ -67,7 +67,7 @@ class _HomeState extends State<Home> {
                 Text(
                   frase,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, fontFamily: 'Teko'),
                 ),
                 ElevatedButton(
                   child: Text("Continue"),
