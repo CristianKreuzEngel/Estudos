@@ -1,29 +1,38 @@
 let input =require('fs').readFileSync('./dev/stdin/flie.txt', 'utf8')
 let lines = input.split('\n')
-
-let valor = +lines.shift()
-if(valor == 1){
-    console.log("January")
-}else if(valor == 2){
-    console.log("February")
-}else if(valor == 3){
-    console.log("March")
-}else if(valor == 4){
-    console.log("April")
-}else if(valor == 5){
-    console.log("May")
-}else if(valor == 6){
-    console.log("June")
-}else if(valor == 7){
-    console.log("July")
-}else if (valor == 8){
-    console.log("August")
-}else if (valor == 9){
-    console.log("September")
-}else if (valor == 10){
-    console.log("October")
-}else if(valor == 11){
-    console.log("November")
-}else if(valor == 12){
-    console.log("December")
+let qtd = +lines.shift()
+for(let g = 0; g < qtd; g++){
+    let alfabeto = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    let aux = 0
+    let cod = lines.shift().split('')
+    let desloc = +lines.shift();
+    let test = cod.some(a => a == "\r")
+    let descod = []
+    if (test){
+        for(let i = 0; i < cod.length-1; i++){
+            for(let j =0; j < 26; j++){
+                if(cod[i] == alfabeto[j]){
+                    aux = j - desloc
+                    if (aux < 0){
+                        aux = 26 - (aux * (-1))
+                    }
+                    descod[i] = alfabeto[aux]
+                }
+            }
+        }
+        console.log(descod.join(""))
+    }else{
+        for(let i = 0; i < cod.length; i++){
+            for(let j =0; j < 26; j++){
+                if(cod[i] == alfabeto[j]){
+                    aux = j - desloc
+                    if (aux < 0){
+                        aux = 26 - (aux * (-1))
+                    }
+                    descod[i] = alfabeto[aux]
+                }
+            }
+        }
+        console.log(descod.join("")) 
+    }
 }

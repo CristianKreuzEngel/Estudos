@@ -1,36 +1,15 @@
-const lenha = (line) => line.split(" ").map(a => +a)
+let contGrenais = 0;
+let inter = 0;
+let gremio = 0;
+let empates =0;
 
-let control=0
-let inter=0
-let gremio=0
-let contador=0
-let empate=0
-
-while (control!=2){
-    const [a,b] = lenha(lines.shift())
-    control=+lines.shift()
-    if (a>b){
-        inter=inter+1
-    }
-    if (a<b){
-        gremio=gremio+1
-    }
-    if (a==b){
-        empate=empate+1
-    }
+let control = 0;
+while(control != 2){
+    let [a,b]= lines.shift().split(" ").map(a => +a)
+    a > b ? inter ++ : a < b ? gremio++ : empates ++
     console.log("Novo grenal (1-sim 2-nao)")
-    contador=contador + 1
+    control = +lines.shift()
+    contGrenais ++
 }
-console.log(`${contador} grenais`)
-console.log(`Inter:${inter}`)
-console.log(`Gremio:${gremio}`)
-console.log(`Empates:${empate}`)
-if (empate>inter && empate>gremio){
-    console.log(`Nao houve vencedor`)
-}
-if (inter>gremio){
-    console.log(`Inter venceu mais`)
-}
-if (gremio>inter){
-    console.log(`Gremio venceu mais`)
-}
+console.log(`${contGrenais} grenais\nInter:${inter}\nGremio:${gremio}\nEmpates:${empates}`)
+inter > gremio ? console.log("Inter venceu mais") : inter < gremio ? console.log("Gremio venceu mais") : console.log("Nao houve vencedor")
