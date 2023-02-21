@@ -13,5 +13,6 @@ for i in range (qtd):
                 aux = g - desloc
                 if aux < 0:
                     aux = 26 - (aux * (-1))
-        descod[c] = descod.append(alfabeto[aux])
-    print(descod)
+                letra = alfabeto[aux]
+                descod.append(letra)
+    print("".join(descod))
