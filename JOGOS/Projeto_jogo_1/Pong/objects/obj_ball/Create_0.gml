@@ -1,0 +1,2 @@
+randomize();
+inicio = false;

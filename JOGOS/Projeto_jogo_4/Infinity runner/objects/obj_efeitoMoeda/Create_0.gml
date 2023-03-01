@@ -1,0 +1,1 @@
+hspeed = layer_get_hspeed("plataforma");
