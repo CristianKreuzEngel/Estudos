@@ -1,6 +1,3 @@
-let input =require('fs').readFileSync('./dev/stdin/flie.txt', 'utf8')
-let lines = input.split('\n')
-
 let control = 1;
 while(control == 1){
     let qtd = +lines.shift()
