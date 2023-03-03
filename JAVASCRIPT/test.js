@@ -1,18 +1,22 @@
 let input =require('fs').readFileSync('./dev/stdin/flie.txt', 'utf8')
 let lines = input.split('\n')
-
-let control = 1;
-while(control == 1){
-    let[numOri, pessoas] = lines.shift().split(" ").map(a => +a)
-    if(numOri == 0 && pessoas == 0){
-        control == 0;
-        break;
+let [a,b,c,d,e] = lines.shift().split(" ").map(a => +a)
+if (a <= b && a <= c && a <= d && a <= b){
+    if(b<=c && b<= d && b<=e){
+        if(c<= d && c<=e){
+            if(d<= e){
+                console.log("C");
+            }
+        }
     }
-    let people = lines.shift().split(" ").map(a => +a)
-    let abacate = [...new Set(people)]
-    if(numOri < pessoas){
-        console.log(pessoas - numOri);
-    }else{
-        
+}else if (a  >= b && a  >= c && a  >= d && a  >= b){
+    if(b >=c && b >= d && b >=e){
+        if(c >= d && c >=e){
+            if(d >= e){
+                console.log("D");
+            }
+        }
     }
+}else{
+    console.log("N");
 }
