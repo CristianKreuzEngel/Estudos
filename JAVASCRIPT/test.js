@@ -1,22 +1,22 @@
 let input =require('fs').readFileSync('./dev/stdin/flie.txt', 'utf8')
 let lines = input.split('\n')
-
-let control = 1;
-while(control == 1){
-    let qtd = +lines.shift()
-    if(qtd == 0){
-        control = 0;
-        break;
-    }
-    let pessoas = lines.shift().split(" ").map(a => +a)
-    let maior = Math.max(...pessoas)
-    let sus = 0
-    let aux = 0
-    for(let i = 0; i < qtd; i++){
-        if(pessoas[i] > aux && pessoas[i] != maior){
-            aux = pessoas[i];
-            sus = i+1;
+let [a,b,c,d,e] = lines.shift().split(" ").map(a => +a)
+if (a <= b && a <= c && a <= d && a <= b){
+    if(b<=c && b<= d && b<=e){
+        if(c<= d && c<=e){
+            if(d<= e){
+                console.log("C");
+            }
         }
     }
-    console.log(sus);
+}else if (a  >= b && a  >= c && a  >= d && a  >= b){
+    if(b >=c && b >= d && b >=e){
+        if(c >= d && c >=e){
+            if(d >= e){
+                console.log("D");
+            }
+        }
+    }
+}else{
+    console.log("N");
 }
