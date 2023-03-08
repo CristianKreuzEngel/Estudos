@@ -13,6 +13,12 @@ function scr_movimentation(){
 		vspeed= 5;
 	}
 	//parar de movimentar
+	
+	if(speed != 0){
+		friction = 0.2;
+	}
+	
+	/*
 	if (!keyboard_check(vk_left) and hspeed < 0){
 		hspeed += 0.5;
 	}
@@ -25,4 +31,5 @@ function scr_movimentation(){
 	if (!keyboard_check(vk_down) and vspeed > 0){
 		vspeed -= 0.5;
 	}
+	*/
 }

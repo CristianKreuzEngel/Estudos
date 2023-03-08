@@ -1,4 +1,3 @@
-if(hspeed > room_width+3){
-	instance_destroy();
-	show_message("Destroiu o tiro");
+if(image_alpha < 1){
+	image_alpha+=0.01;
 }

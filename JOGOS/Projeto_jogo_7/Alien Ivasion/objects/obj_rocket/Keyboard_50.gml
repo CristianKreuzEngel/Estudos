@@ -1,0 +1,1 @@
+tipoDeTiro = 2;
