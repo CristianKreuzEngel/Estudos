@@ -14,13 +14,16 @@ int menu (){
     scanf ("%d", &op);  
     return op;  
 }
-
+void ordena(int vetor[], int tamanho){
+    
+}
 int main() {
 	setlocale(LC_ALL, "");
-	int tam, op, cont, valor, i;
+	register int i, j;
+	int tam, op, cont, valor, contador = 0, troca, copia;
 	printf("\nQual o tamanho do vetor?\n");
 	scanf("%d", &tam);
-	int vetor[tam];
+	int vetor[tam], ordenado[tam];
 	cont = -1;
 	do { 
        op = menu();
@@ -43,19 +46,52 @@ int main() {
               		printf("\nVetor está vazio!\n");
               		break;
 				  }else{
-				  	for(i = 0; i < cont+1; i++){
-				  		
-					  }
+				  	printf("\nValor Retirado: %d\n", vetor[cont]);
+				  	cont--;
 				  }
               	
               case 3 :
-
+              	if(cont == tam-1){
+              		printf("\nVetor está cheio\n");
+              		break;
+				  }else{
+				  	printf("\nVetor não está cheio\n");
+				  }
 			  case 4: 
+			  	if(cont < 0){
+			  		printf("\nVetor está vazio!\n");
+			  		break;
+				  }else{
+				  	printf("\nOriginal: ");
+				  	for(i = 0; i < cont+1; i++){
+            			printf("%d\t", vetor[i]);
+					}
+					for(i = 0; i < tam; i++){
+        				for (j = i; j < tam; j++){
+            				if (vetor[i] > vetor[j]){
+                				int temp = vetor[i];
+                				vetor[i] = vetor[j];
+                				vetor[j] = temp;
+            				}
+        				}
+    				}
+					ordena(vetor, tam);
+					printf("\nOrdenado: ");
+				  	for(i = 0; i < cont+1; i++){
+            			printf("%d\t", vetor[i]);
+					}
+				  }
 			 	break;
 			  case 5:
-            	for(i = 0; i < cont+1; i++){
-            		printf("%d\t", vetor[i]);
-				}
+			  	if(cont < 0){
+			  		printf("\nVetor está vazio!\n");
+				  }else{
+				  	printf("\nVetor: ");
+				  	for(i = 0; i < cont+1; i++){
+            			printf("%d\t", vetor[i]);
+					}
+				  }
+            	
 				break;              	
 			    			              
        }
