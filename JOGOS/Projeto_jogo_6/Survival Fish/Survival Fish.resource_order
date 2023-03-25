@@ -12,11 +12,11 @@
     {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
+    {"name":"Diversos","order":6,"path":"folders/Sprites/Diversos.yy",},
     {"name":"peixes","order":2,"path":"folders/Sprites/peixes.yy",},
     {"name":"text","order":3,"path":"folders/Sprites/text.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Diversos","order":6,"path":"folders/Sprites/Diversos.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_pressEnter","order":1,"path":"sprites/spr_pressEnter/spr_pressEnter.yy",},
