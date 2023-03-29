@@ -1,3 +1,3 @@
 if (global.modoJogo == 2){
-	y -= 4;
+	y -= 10;
 }

@@ -14,16 +14,14 @@ int menu (){
     scanf ("%d", &op);  
     return op;  
 }
-void ordena(int vetor[], int tamanho){
-    
-}
+
 int main() {
 	setlocale(LC_ALL, "");
 	register int i, j;
-	int tam, op, cont, valor, contador = 0, troca, copia;
+	int tam, op, cont, valor;
 	printf("\nQual o tamanho do vetor?\n");
 	scanf("%d", &tam);
-	int vetor[tam], ordenado[tam];
+	int vetor[tam];
 	cont = -1;
 	do { 
        op = menu();
@@ -75,7 +73,6 @@ int main() {
             				}
         				}
     				}
-					ordena(vetor, tam);
 					printf("\nOrdenado: ");
 				  	for(i = 0; i < cont+1; i++){
             			printf("%d\t", vetor[i]);
