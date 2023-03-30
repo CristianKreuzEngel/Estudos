@@ -11,6 +11,6 @@ if (global.modoJogo == 1) {
 }else if (global.modoJogo == 2) {
 	move_bounce_solid(true);
 	global.pongs++
-	speed += 1;
+	speed += 5;
 	
 }
