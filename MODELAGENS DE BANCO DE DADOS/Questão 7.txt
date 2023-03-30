@@ -1,0 +1,19 @@
+Questões da número 7
+
+1 - Um empregado é contador, porém a empresa pode ter um ou nenhum contador;
+	Um empregado é empacotador, porém a empresa pode ter um ou nenhum empregado;
+	Um empregado é vendedor,porém a empresa pode ter um ou nenhum vendedor; 
+
+2 - Nenhum ou vários vendedores atenderam nenhum ou vários clientes;
+
+3 - O empacotador, pode empacotar nenhum ou muitos produtos;
+
+4 - O valor total da compra do cliente estará na entidade;
+
+5 - Nenhum ou vários clientes;
+
+6 - Os produtos que o cliente comprou estarrão nos detalhes da nota fiscal;
+
+7 - Estão concentradas no relacionamento do vendedor com as notas fiscais;
+
+8 - Está na concentradas no relacionamento do empacotador com as notas fiscais;
