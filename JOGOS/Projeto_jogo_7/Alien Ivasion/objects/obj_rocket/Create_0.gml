@@ -1,1 +1,2 @@
 intervaloTiro = false;
+tiroEspecial = false;
