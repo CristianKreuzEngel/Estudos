@@ -1,0 +1,87 @@
+Questões da número 7
+
+Atributos
+
+	Empregados:
+	
+		-Nome;
+		-MatriculaE;
+		-Salário;
+		
+	Empacotador:
+	
+		- RelaçãoDeNotasEmpacotads;
+		- MatriculaE;
+		- IdSetor;
+		- CódigoEmpacotador;
+	
+	Contador:
+	
+		- MatriculaE;
+		- CRC;
+		- IdSetor;
+		
+	Vendedor:
+	
+		-MatriculaE;
+		-IdSetor;
+		-RelaçãoDeVendas;
+		- Comissão;
+		-CódigoVendedor;
+		
+	Atendimento:
+	
+		-CódigoCliente;
+		-MatriculaE;
+		-RelaçãoDeAtendimentos;
+		
+	Cliente:
+		
+		-CPF;
+		-Nome;
+		-Endereço;
+		-HistóricoDeCompras;
+		-codigoCliente;
+		
+	NotaFiscal:
+	
+		-Numero;
+		-CódigoCliente;
+		-CódigoVendedor;
+		-CódigoEmpacotador;
+		-ValorTotal;
+	
+	DetalhesDeNotaFiscal:
+		
+		-CódigoProduto;
+		-QuantidadeProduto;
+		-Frete(Cif ou Fob);
+		-ValorVenda;
+		-Impostos;
+	
+	Produto:
+		
+		-CódigoProduto;
+		-QuantidadeEstoque;
+		-RelaçãoNotas(Entradas e Saídas);
+		-ValorMédio;
+	
+	
+1 - Através do atributo "MatriculaE", onde estará vinculado o setor que o empregado estará 
+trabalhando.
+
+2 - Através do atributo "RelaçãoDeAtendimentos" localizado na entidade associativa "Atendimento".
+
+3 - Através do atributo "CódigoEmpacotador" locazido na entidade "NotaFiscal";
+
+4 - Através do atributo "ValorTotal" localizado na entidade "NotaFiscal";
+
+5 - Através do atributo "RelaçãoDeAtendimentos" localizado na entidade associativa "Atendimento"";
+
+6 - Podemos ver em dois atributos:
+	1º Na entidade "Cliente" no atributo "HistóricoDeCompras";
+	2º Na entidade "DetalhesDeNotaFiscal";
+	
+7 - Na entidade "Vendedor" no atributo "RelaçãoDeVendas";
+
+8 - Na Entidade "Empacotador" no atributo "RelaçãoDeNotasEmpacotads";
