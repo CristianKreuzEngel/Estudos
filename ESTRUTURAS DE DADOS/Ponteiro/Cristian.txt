@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+typedef struct dadosPedidos{
+	char sabor[50];
+	char bebida[20];
+	char tipo[20];
+	int mesa;
+	int qtdB, qtdC;
+}Pedido;
+typedef struct Cliente{
+	char nome[50];
+	char sobrenome[100];
+	char tamanho[50];
+	Pedido document;
+}cadastroPedido;
+void menu(){
+    puts ("\n\n----- Qual tamanho da Pizza? -----\n");
+    puts ("--- P - 6 pedaços(35cm)");
+    puts ("--- M - 9 pedaços(40cm)");
+    puts ("--- G - 12 pedaços(45cm)");
+    puts ("--- GG - 16 pedaços(50cm)");
+}
+void sabores(){
+	puts ("\n\n-----DIGITE O SABOR! -----\n");
+    puts ("---- CALABRESA");
+    puts ("---- BACON");
+    puts ("---- SALAME");
+    puts ("---- PEPERONI");
+    puts ("---- MUSSARELA");
+    puts ("---- MARGUERITA");	
+}
+void menuB(){
+    puts ("\n\n----- Qual bebida? -----\n");
+    puts ("--- AGUA(GASEFICADA - NORMAL)");
+    puts ("--- SUCO (LIMAO - MARACUJA - LARANJA)");
+    puts ("--- CERVEJA(ORIGINAL - ANTARTICA - HEINEKEN)");
+    puts ("--- VINHO(SECO - TINTO)");
+}
+
+int main(int argc, char *argv[]) {
+	setlocale(LC_ALL, "");
+	cadastroPedido fazendoPedido;
+	cadastroPedido *ponteiroPedido = &fazendoPedido;
+	int control, decisao;
+	control = 1;
+	do{
+		//Mensagem de boas vindas ao usuário
+		printf("BEM VINDO\n");
+		printf("\nPara fazer seu pedido de Pizza,\n");
+		printf("\nSiga os passos abaixo\n");
+	
+		//Armazenando os dados
+		printf("\nDigite seu nome e sobrenome:\n");
+		scanf("%s %s", &fazendoPedido.nome, &fazendoPedido.sobrenome);
+	
+		printf("\nDigite o tamanho da pizza\n");
+		menu();
+		scanf("%s", &fazendoPedido.tamanho);
+	
+		sabores();
+		scanf("%s", &fazendoPedido.document.sabor);
+		printf("Alguma bebida?\nDigite 1 - sim ou 2 - nao\n");
+		scanf("%d", &decisao);
+		if(decisao == 1){
+			printf("\nDigite a Bebida:\n");
+			menuB();
+			scanf("%s %s", &fazendoPedido.document.bebida, &fazendoPedido.document.tipo);
+			//*aux = fazendoPedido.document.tipo;
+			printf("\nQuantidade de garrfa(s) ?\n");
+			scanf("%d", &fazendoPedido.document.qtdB);
+			printf("\nQuantidade de copo(s) ?\n");
+			scanf("%d", &fazendoPedido.document.qtdC);
+		}
+		printf("\nQual numero da mesa?\n");
+		scanf("%i", &fazendoPedido.document.mesa);
+	
+		system("cls");
+		if(decisao == 1){
+			printf("====== Pedido ======\nNome: %s %s\nTamanho: %s\nSabor: %s\nBebida: %d garrafa(s) de %s %s e será necessário %d copo(s).\nMesa: %d\n=== Fim do Pedido ===\n",(*ponteiroPedido).nome,(*ponteiroPedido).sobrenome,(*ponteiroPedido).tamanho,(*ponteiroPedido).document.sabor,(*ponteiroPedido).document.qtdB,(*ponteiroPedido).document.bebida,(*ponteiroPedido).document.tipo, (*ponteiroPedido).document.qtdC,(*ponteiroPedido).document.mesa);
+		}else{
+			printf("====== Pedido ======\nNome: %s %s\nTamanho: %s\nSabor: %s\nBebida: Sem bebida\nMesa: %d\n=== Fim do Pedido ===\n",(*ponteiroPedido).nome,(*ponteiroPedido).sobrenome,(*ponteiroPedido).tamanho,(*ponteiroPedido).document.sabor,(*ponteiroPedido).document.mesa);
+		}
+		printf("\n\n\n\n\n\n\n\n\n\n\nNovo pedido?\nDigite 1 - sim ou 2 - nao\n");
+		scanf("%d", &control);
+	}while(control == 1);
+	
+	return 0;
+}

@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO_PILHA 100
+
+/* Estrutura que irá conter a pilha de informações */
+struct pilha{
+	int topo;
+	int tam;
+	char itens[TAMANHO_PILHA];
+};
+
+void push(struct pilha *p, char e){
+	if( p->topo == (TAMANHO_PILHA - 1)){
+		printf("\nEstouro da pilha");
+		return;
+	}  	
+  /* após veriicar se não haveria estouro na capacidade da pilha,
+  é criada uma nova posição na pilha e o elemento é armazenado */
+	p->itens[++(p->topo)] = e;
+	return;
+}
+
+int size(struct pilha *p){
+/* sempre lembrando que na linguagem C o índice de um
+vetor começa na posição 0 */
+	return p->topo+1;
+}
+
+//função de empilhar e imprimir texto empilhado;
+void empilhar(struct pilha *p, char c[TAMANHO_PILHA]){
+	register int i;
+	printf("\nNome em ordem:\n");
+	for(i = 0; c[i] != '\0'; i++){
+		push(p,c[i]);
+		printf("%c\t", p->itens[i+1]);
+	}
+}
+
+//função de desempilhar e imprimir ao contrário
+void desimpilhar(struct pilha *p, char c[TAMANHO_PILHA]){
+	register int i;
+	printf("\nNome em ordem contraria:\n");
+	for(i = size(p)-1; i >= 0; i--){
+	printf("%c\t", p->itens[i]);
+	}
+}
+
+//Função que armazena o texto escrito
+char cadastro(char text[TAMANHO_PILHA]){
+	printf("Digite o nome:\n");
+	scanf("%s", text);
+	
+	return text;
+}
+int main(int argc, char *argv[]) {
+	int aux;
+	char nome[TAMANHO_PILHA];
+	struct pilha x;
+	cadastro(&nome);
+	empilhar(&x, &nome);
+	desimpilhar(&x, &nome);
+}
