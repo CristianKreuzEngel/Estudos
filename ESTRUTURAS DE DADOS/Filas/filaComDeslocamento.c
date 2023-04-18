@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define TAMANHO_FILA 2
 
-/* Estrutura que ir� conter a pilha de informa��es */
+/* Estrutura que irá conter a pilha de informações */
 struct aquelaFila{
 	int frente,tras;
 	int itens[TAMANHO_FILA];
