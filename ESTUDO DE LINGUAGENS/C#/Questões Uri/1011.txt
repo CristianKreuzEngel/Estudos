@@ -1,0 +1,12 @@
+using System; 
+using System.Globalization;
+class URI {
+
+    static void Main(string[] args) { 
+        double x , total;
+        x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+        total = (4.0/3.0)*3.14159*(Math.Pow(x, 3.0));
+        Console.WriteLine ("VOLUME = " + total.ToString("F3", CultureInfo.InvariantCulture));
+    }
+
+}
