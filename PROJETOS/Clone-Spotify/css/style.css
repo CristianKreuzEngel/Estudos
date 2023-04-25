@@ -15,7 +15,6 @@ body{
     font-family: "Roboto", sans-serif;
 }
 /* Utility classes */
-
 .btn-primary {
     background: var(--default-green);
     color: white;
@@ -85,7 +84,7 @@ body{
     justify-content: center;
     align-items: center;
     color: white;
-    background: url("/img/showcase.webp") center center/cover;
+    background: url("/img/showcase.webp") center center/cover;/*caso img não carregar coloca o seguinte caminho /PROJETOS/Clone-Spotify/img/showcase.webp*/
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: color;
 }
