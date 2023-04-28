@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define TAM_MAX 10
+#define TAM_MAX 5
 
 //=============Função de ordenação BubleSort=============================
 void ordenarBubbleSort(int vetor[]){
@@ -18,23 +18,50 @@ void ordenarBubbleSort(int vetor[]){
 }
 
 //=============Função de ordenação Selection Sort========================
-int ordenarSelectionSort(int vetor[], int cont){
-    int i, j, minimo, aux, qtdElementos, contador;
+void ordenarSelectionSort(int vetor[]){
+    int i, j, minimo, aux, qtdElementos, cont, valor, troca;
     cont = 0;
+    troca = 0;
+    printf("Qual ordem?\n1 - Crescente\n2 - Decrescente\n");
+    scanf("%d", &valor);
     qtdElementos = TAM_MAX;
-    for (i = 0; i < qtdElementos-1; i++){
-        minimo = i;
-        for (j = i + 1; j < qtdElementos; j++){
-            if (vetor[j] < vetor[minimo]){
-                minimo = j;
+    if(valor == 1){
+        for (i = 0; i < qtdElementos-1; i++){
+            minimo = i;
+            for (j = i + 1; j < qtdElementos; j++){
+                if (vetor[j] < vetor[minimo]){
+                    minimo = j;
+                }
                 cont++;
             }
+            aux = vetor[i];
+            if(vetor[i] != vetor[minimo]){
+                vetor[i] = vetor[minimo];
+                vetor[minimo] = aux;
+                troca++;
+            }
         }
-        aux = vetor[i];
-        vetor[i] = vetor[minimo];
-        vetor[minimo] = aux;
     }
-    return cont;
+    if(valor == 2){
+        for (i = 0; i < qtdElementos-1; i++){
+            minimo = i;
+            for (j = i + 1; j < qtdElementos; j++){
+                if (vetor[j] > vetor[minimo]){
+                    minimo = j;
+                }
+                cont++;
+            }
+            aux = vetor[i];
+            if(vetor[i] != vetor[minimo]){
+                vetor[i] = vetor[minimo];
+                vetor[minimo] = aux;
+                troca++;
+            }
+                
+        }
+    }
+    printf("Foram feitas %d trocas!\n", troca);
+    printf("Foram feitas %d comparacoes!\n", cont);
 }
 
 //===============Função de ordenação Insertion Sort======================
@@ -52,7 +79,7 @@ void ordenarInsertionSort(int vetor[]){
 }
 
 //================Função de ordenação Merge Sort=========================
-/*Processo de ordenação usando as metada*/
+/*Processo de ordenação usando as metade*/
 void merge (int *vetor, int inicio, int meio, int fim){
     int *temp, p1,p2,tamanho, i, j, k;
     int fim1 = 0, fim2 = 0;// definindo controladores do fim das metadades
@@ -172,10 +199,9 @@ int imprimir(int vetor[]){
     }
 }
 
-
 int main(){
     int vetorzenho[TAM_MAX];
-    int op, contador;
+    int op, contador, valor;
     contador = 0;
     do{
         op = menu();
@@ -187,7 +213,7 @@ int main(){
             ordenarBubbleSort(&vetorzenho);
             break;
         case 3:
-            contador = ordenarSelectionSort(&vetorzenho, &contador);
+            ordenarSelectionSort(&vetorzenho);
             break;
         case 4:
             ordenarInsertionSort(&vetorzenho);
