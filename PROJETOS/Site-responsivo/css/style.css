@@ -14,7 +14,7 @@ body{
     background: #111;
     color: #eee;
     border-radius: 5px;
-    transition: 500ms ease;
+    transition: background 500ms ease;
 }
 .btn:hover{
     cursor: pointer;
@@ -26,4 +26,23 @@ body{
     text-align: center;
     padding: 50px;
     letter-spacing: 2px;
+}
+
+/* Navbar */
+#navbar {
+    width: 100%;
+    background: #111;
+    color: #eee;
+    height: 80px;
+}
+#navbar-container{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#navbar-items{
+    
 }
