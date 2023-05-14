@@ -2,21 +2,21 @@
 #include <stdlib.h>
 #define TAMANHO_FILA 2
 
-/* Estrutura que irá conter a pilha de informações */
+/* Estrutura que irï¿½ conter a pilha de informaï¿½ï¿½es */
 struct aquelaFila{
 	int frente,tras;
 	int itens[TAMANHO_FILA];
 };
 
 int empty(struct aquelaFila *fila){
-	//se o inicio for igual ao final, fila estará vazia;
+	//se o inicio for igual ao final, fila estarï¿½ vazia;
 	if(fila->frente == fila->tras){
 		return 1;
 	}
 	return 0;
 }
 
-int inserir(struct aquelaFila * fila, int x){
+int inserir(struct aquelaFila *fila, int x){
 	if(fila->tras + 1 > TAMANHO_FILA){
 		printf("\nEstouro da capacidade da fila");
 		return 0;

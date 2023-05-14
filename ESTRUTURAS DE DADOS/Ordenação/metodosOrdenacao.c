@@ -79,10 +79,11 @@ void ordenarInsertionSort(int vetor[]){
 }
 
 //================Função de ordenação Merge Sort=========================
+
 /*Processo de ordenação usando as metade*/
 void merge (int *vetor, int inicio, int meio, int fim){
     int *temp, p1,p2,tamanho, i, j, k;
-    int fim1 = 0, fim2 = 0;// definindo control  adores do fim das metadades
+    int fim1 = 0, fim2 = 0;// definindo controladores do fim das metadades
     tamanho = fim-inicio+1;// definindo o tamanho para utilizar no vetor auxiliar
     p1 = inicio;//definindo ponto de partida da primeira metade
     p2 = meio+1;// mesmo procedimento anterior só para a metade 2;
