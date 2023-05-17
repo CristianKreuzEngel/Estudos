@@ -17,7 +17,7 @@ void cadastro(struct Meuvetor *vetor){
     }else{
         scanf("%d", &valor);
         vetor->fim++;
-        vetor->vetor[vetor->fim] = valor;
+        ordenarInsertionSort(vetor->vetor, valor);
         printf("\nValor inserido com sucesso\n");
     }
 }
@@ -51,6 +51,19 @@ void imprimir(struct Meuvetor *vetor){
         }
     }
 }
+// Procedimento de ordenação
+void ordenarInsertionSort(int vetor[], int valor){
+   int i, j;
+   for (i = 0; i < TAM_MAX; i++){
+    //enquanto não chegar na posição 0 e aux menor que o item
+    for(j = i - 1; j>=0 && valor < vetor[j]; j--){
+        vetor[j+1] = vetor[j];
+    }
+    vetor[j+1] = valor;
+   }
+   return;
+}
+
 
 /*FUNÇÕES*/
 // Função menu de interação
@@ -85,7 +98,8 @@ int cheio(struct Meuvetor *vetor){
 }
 // Função de busca
 int pesquisar(struct Meuvetor *vetor){
-    int valor, i, indice;
+    int valor, i;
+    int indice = -1;
     if(vazio(vetor)){
     }else{
         scanf("%d", &valor);
@@ -115,7 +129,12 @@ int main(){
             break;
         case 3:
             valor = pesquisar(&vetor);
-            printf("\nO valor desejado se encontra na posicao %d\n", valor);
+            if(valor == -1){
+                printf("\nValor nao encontrado\n");
+                imprimir(&vetor); 
+            }else{
+                printf("\nO valor desejado se encontra na posicao %d\n", valor);
+            }
             break;
         case 4:
             imprimir(&vetor);
