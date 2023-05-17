@@ -17,7 +17,8 @@ void cadastro(struct Meuvetor *vetor){
     }else{
         scanf("%d", &valor);
         vetor->fim++;
-        ordenarInsertionSort(vetor->vetor, valor);
+        vetor->vetor[vetor->fim] = valor;
+        ordenarInsertionSort(vetor);
         printf("\nValor inserido com sucesso\n");
     }
 }
@@ -52,18 +53,18 @@ void imprimir(struct Meuvetor *vetor){
     }
 }
 // Procedimento de ordenação
-void ordenarInsertionSort(int vetor[], int valor){
-   int i, j;
-   for (i = 0; i < TAM_MAX; i++){
+void ordenarInsertionSort(struct Meuvetor *vetor){
+   int i, j, aux;
+   for (i = 0; i < vetor->fim+1; i++){
+    aux = vetor->vetor[i];
     //enquanto não chegar na posição 0 e aux menor que o item
-    for(j = i - 1; j>=0 && valor < vetor[j]; j--){
-        vetor[j+1] = vetor[j];
+    for(j = i - 1; j>=0 && aux < vetor->vetor[j]; j--){
+        vetor->vetor[j+1] = vetor->vetor[j];
     }
-    vetor[j+1] = valor;
+    vetor->vetor[j+1] = aux;
    }
    return;
 }
-
 
 /*FUNÇÕES*/
 // Função menu de interação
