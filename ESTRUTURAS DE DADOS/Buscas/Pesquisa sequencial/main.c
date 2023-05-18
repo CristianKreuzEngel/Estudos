@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM_MAX 5
+#include <stdbool.h>
+#define TAM_MAX 10
 
 /*ESTRUTURAS*/
 // Estrutura vetor;
 struct Meuvetor{
 	int vetor[TAM_MAX];
 	int fim;
+    int ordenado;
 };
 
 /*PROCEDIMENTO*/
@@ -18,7 +20,7 @@ void cadastro(struct Meuvetor *vetor){
         scanf("%d", &valor);
         vetor->fim++;
         vetor->vetor[vetor->fim] = valor;
-        ordenarInsertionSort(vetor);
+        vetor->ordenado = 0;
         printf("\nValor inserido com sucesso\n");
     }
 }
@@ -63,6 +65,7 @@ void ordenarInsertionSort(struct Meuvetor *vetor){
     }
     vetor->vetor[j+1] = aux;
    }
+   vetor->ordenado = 1;
    return;
 }
 
@@ -114,10 +117,30 @@ int pesquisar(struct Meuvetor *vetor){
     }
 }
 
+// Função de busca binária
+int pesqBinaria(struct Meuvetor *vetor, int inicio, int fim, int valor){
+    int meio;
+    if(!vetor->ordenado)
+        ordenarInsertionSort(vetor);
+    while(inicio <= fim){
+        meio = floor((inicio + fim)/2);
+        if(vetor->vetor[meio] == valor){
+            return meio;
+        }
+        if(vetor->vetor[meio] < valor){
+            inicio = meio + 1;
+        }else{
+            fim = meio - 1;
+        }
+    }
+    
+    return -1;
+}
 int main(){
     struct Meuvetor vetor;
-    int op, valor;
+    int op, valor, index;
     vetor.fim = -1;
+    vetor.ordenado = 0;
     do{
         op = menu();
 
@@ -129,20 +152,25 @@ int main(){
             remover(&vetor);
             break;
         case 3:
-            valor = pesquisar(&vetor);
-            if(valor == -1){
+            printf("\nDigite o valor que tu queres buscar?\n");
+            scanf("%d", &valor);
+            index = pesqBinaria(&vetor, 0, vetor.fim+1, valor);
+            if(index == -1){
                 printf("\nValor nao encontrado\n");
                 imprimir(&vetor); 
             }else{
-                printf("\nO valor desejado se encontra na posicao %d\n", valor);
+                printf("\nO valor desejado se encontra na posicao %d\n", index);
             }
             break;
         case 4:
             imprimir(&vetor);
             break;
+        case 5:
+            ordenarInsertionSort(&vetor);
+            break;
         default:
             if(op != 9)
-                printf("\n Opcao invalida\n");
+                printf("\nOpcao invalida\n");
             break;
         }
     }while(op != 9);
