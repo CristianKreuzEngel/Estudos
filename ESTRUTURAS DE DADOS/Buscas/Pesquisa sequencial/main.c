@@ -12,48 +12,52 @@ struct Meuvetor{
 };
 
 /*PROCEDIMENTO*/
+
 // Procedimento de cadastro
 void cadastro(struct Meuvetor *vetor){
     int valor;
-    if(cheio(vetor)){
-    }else{
+    if(!cheio(vetor)){
         scanf("%d", &valor);
+        if(vetor->vetor[vetor->fim] <= valor){
+            if(vetor->ordenado = 1)
+                vetor->ordenado = 1;     
+        }else
+            vetor->ordenado = 0;
         vetor->fim++;
         vetor->vetor[vetor->fim] = valor;
-        vetor->ordenado = 0;
         printf("\nValor inserido com sucesso\n");
     }
 }
+
 // Procedimento de remoção
 void remover(struct Meuvetor *vetor){
     int i, valor, escolha, aux;
-    if(vazio(vetor)){
-    }else{
-        printf("\nTu queres remover um valor especifico?\n1 - Sim\n2 - Nao\n");
+    if(!vazio(vetor)){
+        printf("\nQual valor?\n");
         scanf("%d", &escolha);
-        if(escolha == 1){
-            printf("\nQual valor?\n");
-            valor = pesquisar(vetor);
-            for(i = valor; i < vetor->fim; i++){
+            valor = pesqBinaria(vetor->vetor, 0, vetor->fim+1, escolha);
+            if(valor >= 0){
+                for(i = valor; i < vetor->fim; i++){
                 vetor->vetor[i] = vetor->vetor[i+1];
             }
             vetor->fim--;
-        }else{
-            vetor->fim--;
-        }
-        printf("\nValor removido com sucesso\n");
+            printf("\nValor removido com sucesso\n");
+            }else{
+                printf("\nvalor nao encontrado\n");
+            }
     }
 }
+
 // Procedimento de impressão
 void imprimir(struct Meuvetor *vetor){
     int i;
-    if(vazio(vetor)){
-    }else{
+    if(!vazio(vetor)){
         for(i=0; i < vetor->fim+1; i++){
             printf("%d\t", vetor->vetor[i]);
         }
     }
 }
+
 // Procedimento de ordenação
 void ordenarInsertionSort(struct Meuvetor *vetor){
    int i, j, aux;
@@ -70,6 +74,7 @@ void ordenarInsertionSort(struct Meuvetor *vetor){
 }
 
 /*FUNÇÕES*/
+
 // Função menu de interação
 int menu (){
     int op;    
@@ -78,10 +83,12 @@ int menu (){
     puts ("2-Retirar elemento");
     puts ("3-Buscar valor"); 
 	puts ("4-Imprimir");  
+	puts ("5-Ordenar");  
     puts ("9-sair");
     scanf ("%d", &op);  
     return op;  
 }
+
 // Função de vazio
 int vazio(struct Meuvetor *vetor){
    if(vetor->fim == -1){
@@ -91,6 +98,7 @@ int vazio(struct Meuvetor *vetor){
         return 0;
    }
 }
+
 // Função de cheio
 int cheio(struct Meuvetor *vetor){
     if(vetor->fim+1 == TAM_MAX){
@@ -98,22 +106,6 @@ int cheio(struct Meuvetor *vetor){
         return 1;
     }else{
         return 0;
-    }
-}
-// Função de busca
-int pesquisar(struct Meuvetor *vetor){
-    int valor, i;
-    int indice = -1;
-    if(vazio(vetor)){
-    }else{
-        scanf("%d", &valor);
-        for(i = 0; i < vetor->fim+1; i++){
-            if(vetor->vetor[i] == valor){
-                indice = i;
-                break;
-            }
-        }
-        return indice;
     }
 }
 
@@ -133,7 +125,6 @@ int pesqBinaria(struct Meuvetor *vetor, int inicio, int fim, int valor){
             fim = meio - 1;
         }
     }
-    
     return -1;
 }
 int main(){
