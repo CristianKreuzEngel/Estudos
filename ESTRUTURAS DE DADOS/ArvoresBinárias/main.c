@@ -37,10 +37,7 @@ int menu (){
 	int op;
 	puts ("\n\tEscolha a opcao\n\t");
 	puts ("\t1-Inserir elemento\t");
-	puts ("\t2-Retirar elemento\t");
-	puts ("\t3-Imprimir arvore\t");
-	puts ("\t4-Imprimir arvore ordenada\t");
-	puts ("\t5-Verificar raiz\t");
+	puts ("\t2-Imprimir arvore\t");
 	puts ("\t9-sair");
 	scanf ("%d", &op);
  return op;
@@ -84,7 +81,10 @@ void inserirDados_3(noArv **raiz, int num){
     noArv *aux = *raiz;
     while(aux){
         if(num < aux->valor)
-            raiz = 
+            raiz = &aux->esquerda;
+        else
+            raiz = &aux->direita;
+        aux = *raiz;
     }
     aux = malloc (sizeof(noArv));
     aux->valor = num;
@@ -105,9 +105,10 @@ int main(){
             printf("\n Digite um valor\n");
             scanf("%d", &valor);
             //raiz = inserirDados_1(raiz, valor);
-            inserirDados_2(&raiz, valor);
+            //inserirDados_2(&raiz, valor);
+            inserirDados_3(&raiz, valor);
             break;
-        case 3:
+        case 2:
             printf("\n\t Primeira impressao\n\t");
             imprimirDados_1(raiz);
             printf("\n\t Segunda impressao\n\t");
