@@ -55,23 +55,25 @@ int menu (){
 	scanf ("%d", &op);
  return op;
 }
-// Função de rotação à esquerda
+
+//Função para a rotação à esquerda
 noArv* rotacaoEsquerda(noArv *r){
     noArv *y, *f;
 
-    y = r->direito;
-    f = y->esquerdo;
+    y = r->direito; // y aponta para a subárvore direita da raiz r
+    f = y->esquerdo; // f aponta para o filho esquerdo de y
 
-    y->esquerdo = r;
-    r->direito = f;
+    y->esquerdo = r; // o filho esquerdo de y passa a ser a raiz r
+    r->direito = f; // o filho direito de r passa a ser f
 
-    f->altura = maior(alturaDoNo(r->esquerdo), alturaDoNo(r->direito)) + 1;
+    // recalcula a altura dos nós que foram movimentados
+    r->altura = maior(alturaDoNo(r->esquerdo), alturaDoNo(r->direito)) + 1;
     y->altura = maior(alturaDoNo(y->esquerdo), alturaDoNo(y->direito)) + 1;
 
     return y;
 }
 
-// Função de rotação à direita
+// Função de rotação à direita  
 noArv* rotacaoDireita(noArv *r){
     noArv *y, *f;
 
@@ -81,60 +83,63 @@ noArv* rotacaoDireita(noArv *r){
     y->direito = r;
     r->esquerdo = f;
 
-    f->altura = maior(alturaDoNo(r->esquerdo), alturaDoNo(r->direito)) + 1;
+    r->altura = maior(alturaDoNo(r->esquerdo), alturaDoNo(r->direito)) + 1;
     y->altura = maior(alturaDoNo(y->esquerdo), alturaDoNo(y->direito)) + 1;
 
     return y;
 }
 
-// Função rotação dupla direita esquerda
-noArv* rotacaoDireitaEsquerda(noArv *r){
-    r->direito = rotacaoDireita(r->direito);
-    return rotacaoEsquerda(r);  
-}
-
-// Função rotação dupla esquerda direita
+//Funções para as rotações duplas
 noArv* rotacaoEsquerdaDireita(noArv *r){
     r->esquerdo = rotacaoEsquerda(r->esquerdo);
-    return rotacaoDireita(r);  
+    return rotacaoDireita(r);
+}
+
+noArv* rotacaoDireitaEsquerda(noArv *r){
+    r->direito = rotacaoDireita(r->direito);
+    return rotacaoEsquerda(r);
 }
 
 //Função de balancear
+/*
+    Função para realizar o balanceamento da árvore após uma inserção ou remoção
+    Recebe o nó que está desbalanceado e retorna a nova raiz após o balanceamento
+*/
 noArv* balancear(noArv *raiz){
     short fb = fatorDeBalanceamento(raiz);
 
-    //rotação a esquerda
+    // Rotação à esquerda
     if(fb < -1 && fatorDeBalanceamento(raiz->direito) <= 0)
         raiz = rotacaoEsquerda(raiz);
 
-    //rotação direita
+    // Rotação à direita
     else if(fb > 1 && fatorDeBalanceamento(raiz->esquerdo) >= 0)
         raiz = rotacaoDireita(raiz);
 
-    //rotação esquerda para direita
+    // Rotação dupla à esquerda
     else if(fb > 1 && fatorDeBalanceamento(raiz->esquerdo) < 0)
         raiz = rotacaoEsquerdaDireita(raiz);
-    
-    //rotação direita para esquerda
+
+    // Rotação dupla à direita
     else if(fb < -1 && fatorDeBalanceamento(raiz->direito) > 0)
-        raiz  = rotacaoDireitaEsquerda(raiz);
-    
+        raiz = rotacaoDireitaEsquerda(raiz);
+
     return raiz;
 }
 //Função de inserir
 noArv* inserir(noArv *raiz, int x){
-    if(raiz == NULL)//árvore vazia
+   if(raiz == NULL) // árvore vazia
         return novoNo(x);
-    else{
+    else{ // inserção será à esquerda ou à direita
         if(x < raiz->valor)
             raiz->esquerdo = inserir(raiz->esquerdo, x);
         else if(x > raiz->valor)
             raiz->direito = inserir(raiz->direito, x);
         else
-            printf("\nInsercao nao realizada!\nO elemento %d ja existe!\n", x);
+            printf("\nInsercao nao realizada!\nO elemento %d a existe!\n", x);
     }
 
-    //Recalcula a altura de todos os nós entre a raiz e o novo nó inserido
+    // Recalcula a altura de todos os nós entre a raiz e o novo nó inserido
     raiz->altura = maior(alturaDoNo(raiz->esquerdo), alturaDoNo(raiz->direito)) + 1;
 
     // verifica a necessidade de rebalancear a árvore
