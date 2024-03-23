@@ -1,0 +1,15 @@
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/bin/Debug/net8.0/paradigma
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/bin/Debug/net8.0/paradigma.deps.json
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/bin/Debug/net8.0/paradigma.runtimeconfig.json
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/bin/Debug/net8.0/paradigma.dll
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/bin/Debug/net8.0/paradigma.pdb
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.GeneratedMSBuildEditorConfig.editorconfig
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.AssemblyInfoInputs.cache
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.AssemblyInfo.cs
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.csproj.CoreCompileInputs.cache
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.sourcelink.json
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.dll
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/refint/paradigma.dll
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.pdb
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/paradigma.genruntimeconfig.cache
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/paradigma/obj/Debug/net8.0/ref/paradigma.dll
