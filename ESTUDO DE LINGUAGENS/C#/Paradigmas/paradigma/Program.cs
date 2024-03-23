@@ -6,7 +6,6 @@ internal class Program
     private static void Main(string[] args)
     {
         int A = 0, B = 0, C = 0, D, R, S;
-
         while (true)
         {
             try
@@ -15,17 +14,30 @@ internal class Program
                 {
                     Console.WriteLine("Por favor insira o valor A: ");
                     A = int.Parse(Console.ReadLine());
+                    if (A < 0)
+                    {
+                        throw new ArgumentException("Valor não pode ser negativo. Verifique e insira novamente");
+                    }
                 }
                 if (B == 0)
                 {
                     Console.WriteLine("Por favor insira o valor B: ");
                     B = int.Parse(Console.ReadLine());
+                    if (B < 0)
+                    {
+                        throw new ArgumentException("Valor não pode ser negativo. Verifique e insira novamente");
+                    }
                 }
                 if (C == 0)
                 {
                     Console.WriteLine("Por favor insira o valor C: ");
                     C = int.Parse(Console.ReadLine());
+                    if (C < 0)
+                    {
+                        throw new ArgumentException("Valor não pode ser negativo. Verifique e insira novamente");
+                    }
                 }
+               
 
                 R = (A + B) * (A + B);
                 S = (B + C) * (B + C);
@@ -33,6 +45,16 @@ internal class Program
                 D = (R + S) / 2;
                 Console.WriteLine($"Resultado: {D}");
                 break;
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+                if (A < 0)
+                    A = 0;
+                if (B < 0)
+                    B = 0;
+                if (C < 0)
+                    C = 0;
             }
             catch (FormatException e)
             {
