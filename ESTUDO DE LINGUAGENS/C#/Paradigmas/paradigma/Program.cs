@@ -3,6 +3,10 @@
 
 internal class Program
 {
+    public static int Calc(int a, int b, int c){
+        int calculo = (((a + b)*(a + b)) + ((b + c)*(b + c)))/2 ;
+        return calculo;
+    }
     private static void Main(string[] args)
     {
         int A = 0, B = 0, C = 0, D, R, S;
@@ -14,35 +18,30 @@ internal class Program
                 {
                     Console.WriteLine("Por favor insira o valor A: ");
                     A = int.Parse(Console.ReadLine());
-                    if (A < 0)
+                    if (A <= 0)
                     {
-                        throw new ArgumentException("Valor não pode ser negativo. Verifique e insira novamente");
+                        throw new ArgumentException("Valor inválido. Verifique e insira novamente");
                     }
                 }
                 if (B == 0)
                 {
                     Console.WriteLine("Por favor insira o valor B: ");
                     B = int.Parse(Console.ReadLine());
-                    if (B < 0)
+                    if (B <= 0)
                     {
-                        throw new ArgumentException("Valor não pode ser negativo. Verifique e insira novamente");
+                        throw new ArgumentException("Valor inválido. Verifique e insira novamente");
                     }
                 }
                 if (C == 0)
                 {
                     Console.WriteLine("Por favor insira o valor C: ");
                     C = int.Parse(Console.ReadLine());
-                    if (C < 0)
+                    if (C <= 0)
                     {
-                        throw new ArgumentException("Valor não pode ser negativo. Verifique e insira novamente");
+                        throw new ArgumentException("Valor inválido. Verifique e insira novamente");
                     }
                 }
-               
-
-                R = (A + B) * (A + B);
-                S = (B + C) * (B + C);
-
-                D = (R + S) / 2;
+                D = Calc(A,B,C);;
                 Console.WriteLine($"Resultado: {D}");
                 break;
             }
