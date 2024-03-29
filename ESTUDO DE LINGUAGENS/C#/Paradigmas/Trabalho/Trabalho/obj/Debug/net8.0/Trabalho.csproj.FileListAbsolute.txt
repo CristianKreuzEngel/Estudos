@@ -1,0 +1,15 @@
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/bin/Debug/net8.0/Trabalho
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/bin/Debug/net8.0/Trabalho.deps.json
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/bin/Debug/net8.0/Trabalho.runtimeconfig.json
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/bin/Debug/net8.0/Trabalho.dll
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/bin/Debug/net8.0/Trabalho.pdb
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.GeneratedMSBuildEditorConfig.editorconfig
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.AssemblyInfoInputs.cache
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.AssemblyInfo.cs
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.csproj.CoreCompileInputs.cache
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.sourcelink.json
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.dll
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/refint/Trabalho.dll
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.pdb
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/Trabalho.genruntimeconfig.cache
+/home/cristianengel/repositórios/Estudos/ESTUDO DE LINGUAGENS/C#/Paradigmas/Trabalho/Trabalho/obj/Debug/net8.0/ref/Trabalho.dll

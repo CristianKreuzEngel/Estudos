@@ -64,6 +64,14 @@ internal class Program
                     B = 0;
                 if (e.Message.Contains("C"))
                     C = 0;
+            }catch(Exception e){
+                Console.WriteLine($"Ocorreu um erro inesperado: {e.Message}, Verifique e insira novamente");
+                if (e.Message.Contains("A"))
+                    A = 0;
+                if (e.Message.Contains("B"))
+                    B = 0;
+                if (e.Message.Contains("C"))
+                    C = 0;
             }
         }
     }
