@@ -28,7 +28,7 @@ int remover(struct aquelaFila * fila){
 	int x;
 	if(empty(fila) ){
 		printf("\nFila vazia");
-		return -999999;
+		return -999999;					
 	}
 	x = fila->itens[fila->frente];
  		fila->frente++;

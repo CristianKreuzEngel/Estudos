@@ -10,11 +10,11 @@ namespace Trabalho.classes
     public enum Header
     {
         Codigo = 0,
-        Descricao = 0,
-        Categoria = 0,
-        Preco = 0,
-        Estoque = 0,
-        QtdVendas = 0
+        Descricao = 1,
+        Categoria = 2,
+        Preco = 3,
+        Estoque = 4,
+        QtdVendas = 5
     }
     public class ProdutoParser
     {
