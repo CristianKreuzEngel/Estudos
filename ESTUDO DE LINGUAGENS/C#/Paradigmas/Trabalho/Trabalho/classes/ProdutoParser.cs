@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,7 @@ namespace Trabalho.classes
                     Codigo = int.Parse(line.Split(';')[(int)Header.Codigo]),
                     Descricao = line.Split(';')[(int)Header.Descricao],
                     Categoria = line.Split(';')[(int)Header.Categoria],
-                    Preco = double.Parse(line.Split(';')[(int)Header.Preco]),
+                    Preco = Convert.ToDouble(line.Split(';')[(int)Header.Preco], CultureInfo.InvariantCulture),
                     Estoque = int.Parse(line.Split(';')[(int)Header.Estoque]),
                     QtdVendas = int.Parse(line.Split(';')[(int)Header.QtdVendas]),
                 };

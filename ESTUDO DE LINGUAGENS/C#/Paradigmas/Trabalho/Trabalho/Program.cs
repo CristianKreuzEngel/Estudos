@@ -43,10 +43,11 @@ List<Produto> maisEstoque(List<Produto> produtos)
 // Case 3
 String CategoriaMaisVendida(List<Produto> categoria)
 {
-    var vendasPorCategoria = categoria.GroupBy(p => p.Categoria).Select(g => new {
-        Categoria = g.Key, 
+    var vendasPorCategoria = categoria.GroupBy(p => p.Categoria).Select(g => new
+    {
+        Categoria = g.Key,
         TotalVendas = g.Sum(p => p.QtdVendas)
-        });
+    });
 
     var aquelaCategoria = vendasPorCategoria.OrderByDescending(c => c.TotalVendas).FirstOrDefault();
 
@@ -63,39 +64,42 @@ List<Produto> menosVendidos(List<Produto> produtos)
 
     return topCincoMenosVendidos;
 }
-
-
+//Case 5
+List<Produto> estoqueSeguro(List<Produto> produtos)
+{
+    var estoqueSeg = produtos.Where(p => p.Estoque < p.QtdVendas * 0.33).ToList();
+    return estoqueSeg;
+}
+//Case 6
+List<Produto> excessoEstoque(List<Produto> produtos)
+{
+    var produtoComEstoqueMais = produtos.Where(p => p.Estoque >= p.QtdVendas * 3).ToList();
+    return produtoComEstoqueMais;
+}
 //Case 7
 Dictionary<string, double> CalcularMediaCategoria(List<Produto> produtos)
 {
-    var ordenarCat = produtos.GroupBy(p => p.Categoria);
-
-    var valorMedio = new Dictionary<string, double>();
-
-    foreach (var item in ordenarCat)
+    var precoMedioPorCategoria = new Dictionary<string, double>();
+    var produtosPorCategoria = produtos.GroupBy(p => p.Categoria);
+    foreach (var grupoCategoria in produtosPorCategoria)
     {
-        var categoria = item.Key;
-        var totalProdutos = item.Count();
-        var totalPreco = item.Sum(p => p.Preco);
-        var valorMedioCat = totalPreco / totalProdutos;
-        valorMedio.Add(categoria, valorMedioCat);
+        var categoria = grupoCategoria.Key;
+        var precoMedio = grupoCategoria.Average(p => p.Preco);
+        precoMedioPorCategoria.Add(categoria, precoMedio);
     }
-    return valorMedio;
+
+    return precoMedioPorCategoria;
 }
+
 //caso for linux
-//var dataset = File.ReadAllText("./Dataset.csv");
+var dataset = File.ReadAllText("./Dataset.csv");
 
 //caso for windows
-var dataset = File.ReadAllText("C:\\Repositorios\\Estudos\\ESTUDO DE LINGUAGENS\\C#\\Paradigmas\\Trabalho\\Trabalho\\Dataset.csv");
+//var dataset = File.ReadAllText("C:\\Repositorios\\Estudos\\ESTUDO DE LINGUAGENS\\C#\\Paradigmas\\Trabalho\\Trabalho\\Dataset.csv");
 
 int op;
 
 var list = ProdutoParser.ConverterList(dataset);
-/*foreach (var produto in list)
-{
-  Console.WriteLine(produto.Codigo + " | " + produto.Descricao + " | " + produto.Categoria + " | " + produto.Preco + " | " + produto.Estoque + " | " + produto.QtdVendas);
-}*/
-
 do
 {
     op = menu();
@@ -131,11 +135,21 @@ do
             break;
 
         case 5:
-
+            var estoqueSeg = estoqueSeguro(list);
+            Console.WriteLine("Os produtos com o estoque seguro são:\n");
+            foreach (var produto in estoqueSeg)
+            {
+                Console.WriteLine(" | " + produto.Codigo + " | " + produto.Descricao + " | " + produto.Estoque + " | ");
+            }
             break;
 
         case 6:
-
+            var estoqueMais = excessoEstoque(list);
+            Console.WriteLine("Os produtos com excesso de estoque são:\n");
+            foreach (var produto in estoqueMais)
+            {
+                Console.WriteLine(" | " + produto.Codigo + " | " + produto.Descricao + " | " + produto.Estoque + " | ");
+            }
             break;
 
         case 7:
@@ -144,6 +158,10 @@ do
             {
                 Console.WriteLine($"Categoria: {produto.Key}, Valor Médio: {produto.Value}");
             }
+            break;
+
+        default:
+            Console.WriteLine("Opção inválida");
             break;
     }
 
