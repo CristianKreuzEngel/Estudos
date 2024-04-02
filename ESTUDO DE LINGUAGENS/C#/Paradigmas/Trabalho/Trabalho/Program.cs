@@ -156,7 +156,7 @@ do
             var medioValor = CalcularMediaCategoria(list);
             foreach (var produto in medioValor)
             {
-                Console.WriteLine($"Categoria: {produto.Key}, Valor Médio: {produto.Value}");
+                Console.WriteLine($"Categoria: {produto.Key}, Valor Médio: {produto.Value.ToString("F2")}");
             }
             break;
 
