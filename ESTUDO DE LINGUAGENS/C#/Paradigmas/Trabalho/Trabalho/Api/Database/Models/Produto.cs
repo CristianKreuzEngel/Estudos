@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Trabalho.classes{
+namespace Api.Database.Models{
     public class Produto{
         
         public int Codigo {get; set;}

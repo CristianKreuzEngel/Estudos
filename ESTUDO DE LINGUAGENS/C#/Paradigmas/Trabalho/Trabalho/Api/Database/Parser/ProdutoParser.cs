@@ -4,9 +4,10 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Api.Database.Models;
 
 
-namespace Trabalho.classes
+namespace Api.Database.Parser
 {
     public enum Header
     {
