@@ -1,2 +1,0 @@
-intervaloTiro = false;
-tiroEspecial = false;

@@ -1,1 +1,0 @@
-tipoDeTiro = 1;

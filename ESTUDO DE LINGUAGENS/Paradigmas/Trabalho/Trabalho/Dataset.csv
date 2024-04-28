@@ -1,0 +1,25 @@
+codigo;descricao;categoria;preco;estoque;Qtd. vendida
+1;Pão frances;Comidas;0.80;50;120
+2;Agua com gas;Bebidas;1.20;5;8
+3;Chocolate;Doces;4.25;1;12
+4;Arroz;Comidas;22.50;4;17
+5;Coca Cola;Bebidas;5.50;10;27
+6;Feijão;Comidas;12.90;7;15
+7;Massa;Comidas;7.80;8;9
+8;Bom Bom;Doces;2.49;35;15
+9;Creme dental;Higiene;9.50;25;14
+10;Fanta;Bebidas;4.50;5;18
+11;Agua;Bebidas;1.00;25;30
+12;Escova de dentes;Higiene;12.79;10;3
+13;Cerveja;Bebidas;6.99;70;48
+14;Vinho;Bebidas;18.85;18;6
+15;Sal;Comidas;2.98;15;7
+16;Açucar;Comidas;6.19;8;30
+17;Barra de cereais;Doces;3.15;29;10
+18;Alcaçuz;Doces;1.99;29;90
+19;Balas;Doces;9.90;12;25
+20;Chiclete;Doces;0.79;120;200
+21;Papel Higienico;Higiene;12.98;19;41
+22;Desinfetante;Higiene;1.49;12;49
+23;Alcool;Higiene;7.79;12;5
+24;Esponja de aço;Higiene;1.67;5;56

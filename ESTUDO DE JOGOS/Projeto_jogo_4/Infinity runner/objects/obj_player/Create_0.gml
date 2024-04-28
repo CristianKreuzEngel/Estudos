@@ -1,1 +1,0 @@
-lado = "cima";

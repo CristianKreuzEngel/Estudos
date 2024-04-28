@@ -1,1 +1,0 @@
-speedMoviment = 3;
